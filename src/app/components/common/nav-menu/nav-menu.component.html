@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+  <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+    <i class="material-icons">menu</i>
+  </button>
+  <span class="title">Angular Material Demo</span>
+</mat-toolbar>
+
+<mat-sidenav #sidenav mode="side" class="app-sidenav" color="primary">
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('dashboard')">
+      <mat-icon>dashboard</mat-icon>
+      <div class="mat-list-text">Dashboard</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('entities')">
+      <mat-icon>people</mat-icon>
+      <div class="mat-list-text">Persons</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('entities/new')">
+      <mat-icon>person_add</mat-icon>
+      <div class="mat-list-text">Add Person</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('collections')">
+      <mat-icon></mat-icon>
+      <div class="mat-list-text">Collections</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('collections/new')">
+      <mat-icon>add</mat-icon>
+      <div class="mat-list-text">Add Collection</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('expenses')">
+      <mat-icon></mat-icon>
+      <div class="mat-list-text">Expenses</div>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list>
+    <a mat-list-item (click)="onSideNavClick('expenses/new')">
+      <mat-icon>add</mat-icon>
+      <div class="mat-list-text">Add Expense</div>
+    </a>
+  </mat-nav-list>
+
+  <mat-nav-list>
+    <mat-icon></mat-icon>
+    <a mat-list-item (click)="logout()">Logout</a>
+  </mat-nav-list>
+</mat-sidenav>
