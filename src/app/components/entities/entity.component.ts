@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ModelMetadataService, EntityService, AppNotificationService } from '@app/services';
 import { FormHelper } from '../../shared/helpers';
+import { isNumber } from 'util';
 
 @Component({
   selector: 'app-entity',
@@ -13,11 +14,21 @@ export class EntityComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private router: Router, private metaService: ModelMetadataService,
+  constructor(private route: ActivatedRoute, private router: Router, private metaService: ModelMetadataService,
     private service: EntityService, private notificationService: AppNotificationService) { }
 
   ngOnInit() {
-    this.form = FormHelper.toFormGroup(this.metaService.getEntityMeta());
+    this.route.params.subscribe(x => {
+      const id = x.id;
+      if (Number(id)) {
+        this.service.get(Number(id)).subscribe(response => {
+          const model = response;
+          this.form = FormHelper.toFormGroup(this.metaService.getEntityMeta(), model);
+        });
+      } else {
+        this.form = FormHelper.toFormGroup(this.metaService.getEntityMeta());
+      }
+    });
   }
 
   onSubmit() {

@@ -1,14 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AbstractControl, FormControl } from '@angular/forms';
+import { FormControl, AbstractControl } from '@angular/forms';
 import { FloatLabelType } from '@angular/material';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './app-input.component.html',
-  styleUrls: ['./app-input.component.scss']
+  selector: 'app-date',
+  templateUrl: './app-date.component.html',
+  styleUrls: ['./app-date.component.scss']
 })
-export class AppInputComponent implements OnInit {
-
+export class AppDateComponent implements OnInit {
   @Input() form: AbstractControl;
   @Input() name: string;
   @Input() label: string;

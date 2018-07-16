@@ -1,4 +1,4 @@
-export interface ILoginModel {
+export interface IExpenseModel {
   id: number;
   amount: number;
   description: string;

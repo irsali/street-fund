@@ -22,3 +22,5 @@ export class CollectionService {
     const response = this.http.get(`collections/${id}`);
     return response;
   }
+
+}

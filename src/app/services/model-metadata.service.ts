@@ -35,7 +35,7 @@ export class ModelMetadataService {
       { key: 'id' },
       { key: 'amount', required: true },
       { key: 'date', required: true },
-      { key: 'entityId' },
+      { key: 'entityId', required: true },
     ];
   }
 
@@ -45,7 +45,7 @@ export class ModelMetadataService {
       { key: 'amount', required: true },
       { key: 'date', required: true },
       { key: 'description', required: true },
-      { key: 'entityId' },
+      { key: 'entityId', required: true },
     ];
   }
 

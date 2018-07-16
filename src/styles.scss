@@ -12,6 +12,10 @@ html, body {
   height: 100%;
 }
 
+.floatRt {
+  float: right;
+}
+
 mat-sidenav-container.m2app-dark {
   background: black;
 }
@@ -112,3 +116,6 @@ mat-chip {
   flex: 1 1 auto;
 }
 
+.link {
+  color: #3f51b5;
+}

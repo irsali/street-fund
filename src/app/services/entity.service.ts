@@ -15,8 +15,13 @@ export class EntityService {
     return response;
   }
 
-  getPage(page: number = 1, pageSize: number = 10, sort?: string, search?: string) {
-    const response = this.http.getPage(`entities?_page=${page}&_limit=${pageSize}`);
+  getPage(page: number = 1, pageSize: number = 10, sortField?: string, sortOrder?: string, search?: string) {
+    const response = this.http.getPage(`entities?_page=${page}&_limit=${pageSize}&_sort=${sortField}&_order=${sortOrder}`);
+    return response;
+  }
+
+  getEntityAutoComplete(search: string) {
+    const response = this.http.get(`entities?q=${search || ''}&_page=1&_limit=10`);
     return response;
   }
 

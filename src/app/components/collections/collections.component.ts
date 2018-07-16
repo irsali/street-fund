@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators/catchError';
 import { map } from 'rxjs/operators/map';
 import { startWith } from 'rxjs/operators/startWith';
 import { switchMap } from 'rxjs/operators/switchMap';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-collections',
@@ -15,7 +16,7 @@ import { switchMap } from 'rxjs/operators/switchMap';
   styleUrls: ['./collections.component.scss']
 })
 export class CollectionsComponent implements OnInit {
-  displayedColumns = ['firstName', 'lastName', 'phoneNo', 'email', 'houseNo'];
+  displayedColumns = ['date', 'amount'];
   dataSource = new MatTableDataSource();
 
   resultsLength = 0;
@@ -25,7 +26,7 @@ export class CollectionsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private service: EntityService) { }
+  constructor(private service: CollectionService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
 
@@ -37,7 +38,7 @@ export class CollectionsComponent implements OnInit {
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.service.getPage();
+          return this.service.getPage(this.paginator.pageIndex + 1, this.paginator.pageSize, 'date', this.sort.direction);
           // this.sort.active, this.sort.direction, this.paginator.pageIndex);
         }),
         map((data: any) => {
@@ -56,4 +57,10 @@ export class CollectionsComponent implements OnInit {
         })
       ).subscribe(data => this.dataSource.data = data);
   }
+
+
+  goToEntity(id: number) {
+    this.router.navigate([id], { relativeTo: this.route });
+  }
+
 }

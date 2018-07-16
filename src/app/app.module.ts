@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@app/shared';
 import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
-import { ModelMetadataService, AppNotificationService, AppHttpService, EntityService, LoginService, CollectionService, ExpenseService } from '@app/services';
+import {
+  ModelMetadataService, AppNotificationService, AppHttpService, EntityService,
+  LoginService, CollectionService, ExpenseService, SessionService
+} from '@app/services';
 import { EntitiesComponent } from './components/entities/entities.component';
 import { EntityComponent } from './components/entities/entity.component';
 import { CollectionsComponent } from './components/collections/collections.component';
@@ -46,9 +49,14 @@ const routes = [
     SharedModule
   ],
   providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'en-IN'
+    },
     ModelMetadataService,
     AppNotificationService,
     AppHttpService,
+    SessionService,
     EntityService,
     LoginService,
     CollectionService,

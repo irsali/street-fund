@@ -24,7 +24,7 @@ export class AppHttpService {
   put(resourceUrl: string, form: any) {
     let response;
     if (form.id > 0) {
-      response = this.http.put(`${this.appUrl}${resourceUrl}`, form);
+      response = this.http.put(`${this.appUrl}${resourceUrl}/${form.id}`, form);
     } else {
       response = this.http.post(`${this.appUrl}${resourceUrl}`, form);
     }
