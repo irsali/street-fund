@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  AppUrl: 'https://json-.herokuapp.com/',
+  // AppUrl: 'https://json-.herokunapp.com/',
+  AppUrl: 'https://json.now.sh/',
 };
