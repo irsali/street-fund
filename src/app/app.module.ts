@@ -20,7 +20,6 @@ import { LoginGuard } from './guards/login.guard';
 import { RoleGuard } from './guards/role.guard';
 import { RoleEnum } from './models/enums';
 
-
 const routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
