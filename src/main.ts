@@ -14,6 +14,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/observable/merge';
+import 'rxjs/observable/forkJoin';
 import { of as observableOf } from 'rxjs/observable/of';
 import 'rxjs/operators/catchError';
 // import { map } from 'rxjs/operators/map';

@@ -14,7 +14,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((event: RouterEvent) => {
-      console.log(event);
       if (event instanceof NavigationEnd) {
         console.log(event.url);
         if (event.url === '/login') {

@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import {
   ModelMetadataService, AppNotificationService, AppHttpService, EntityService,
-  LoginService, CollectionService, ExpenseService, SessionService
+  LoginService, CollectionService, ExpenseService, SessionService, DashboardService
 } from '@app/services';
 import { EntitiesComponent } from './components/entities/entities.component';
 import { EntityComponent } from './components/entities/entity.component';
@@ -82,6 +82,7 @@ const routes = [
     LoginService,
     CollectionService,
     ExpenseService,
+    DashboardService,
 
     LoginGuard,
     RoleGuard,
