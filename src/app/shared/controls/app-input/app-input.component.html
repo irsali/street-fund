@@ -6,7 +6,7 @@
     Please enter a valid email address
   </mat-error>
   <mat-error *ngIf="control.hasError('required')">
-    <strong>Required</strong>
+    Please enter a <strong>value</strong>
   </mat-error>
   <mat-error *ngIf="control.hasError('minlength')">
     Minimum length is {{control.errors['minlength'].requiredLength}}

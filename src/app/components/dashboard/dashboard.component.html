@@ -1,3 +1,68 @@
-<p>
-  dashboard works!
-</p>
+<mat-card>
+  <mat-card-title>Dashboard</mat-card-title>
+  <mat-card-content>
+
+    <mat-grid-list cols="3" rowHeight="200px">
+      <mat-grid-tile>
+        <mat-card class="total">
+          <mat-card-content>
+            <h3>Totol Persons</h3>
+            <mat-chip-list>
+              <mat-chip color="accent" selected>{{totalPersons}}</mat-chip>
+            </mat-chip-list>
+          </mat-card-content>
+          <mat-card-actions>
+            <mat-icon [routerLink]="['/entities']" class="floatRt">fullscreen</mat-icon>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="total">
+          <mat-card-content>
+            <h3>Totol Collection</h3>
+            <mat-chip-list>
+              <mat-chip color="accent" selected>{{totalCollection}} </mat-chip>
+            </mat-chip-list>
+          </mat-card-content>
+          <mat-card-actions>
+            <mat-icon [routerLink]="['/collections']" class="floatRt">fullscreen</mat-icon>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="total">
+          <mat-card-content>
+            <h3>Totol Expenses</h3>
+            <mat-chip-list>
+              <mat-chip color="accent" selected>{{totalExpenses}} </mat-chip>
+            </mat-chip-list>
+          </mat-card-content>
+          <mat-card-actions>
+            <mat-icon [routerLink]="['/expenses']" class="floatRt">fullscreen</mat-icon>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="3">
+        <mat-card class="total">
+          <mat-card-content>
+            <h3>Totol Balance</h3>
+            <mat-chip-list>
+              <mat-chip color="accent" selected>{{balanceAmount}} </mat-chip>
+            </mat-chip-list>
+          </mat-card-content>
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+
+
+
+  </mat-card-content>
+</mat-card>

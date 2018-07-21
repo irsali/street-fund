@@ -6,16 +6,24 @@ export class AppNotificationService {
 
   constructor(private _snackbar: MatSnackBar) { }
 
+  notifyNotAllowed(message?: string, action?: string) {
+    this._snackbar.open(message || 'Please contact admin to extend your role with App.', action || 'Not Authorize');
+  }
+
   notifySuccess(message: string, action?: string) {
-    this._snackbar.open(message, action || 'successully saved');
+    this._snackbar.open(message, action || 'Successully saved!');
   }
 
   notifyBadRequest(message: string, action?: string) {
-    this._snackbar.open(message, action || 'Incomplete or bad data. Please contact Admin');
+    this._snackbar.open(message, action || 'Validation error');
   }
 
-  notifyError(message: string, action?: string) {
-    this._snackbar.open(message, action || 'Something went wrong. Please try again!');
+  notifyLocalValidationError(message?: string, action?: string) {
+    this._snackbar.open(message || 'Please check the form', action || 'Validation failed');
+  }
+
+  notifyError(message?: string, action?: string) {
+    this._snackbar.open(message || 'Please try again', action || 'Error occurred');
   }
 
 }

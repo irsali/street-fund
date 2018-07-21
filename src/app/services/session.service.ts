@@ -13,10 +13,14 @@ export class SessionService {
     }
     return this._role;
   }
-  set role(role: string) {
+
+  signIn(role) {
     this._role = role;
-    localStorage.setItem('role', this._role);
+    localStorage.setItem('role', role);
   }
 
-
+  signOut() {
+    this._role = null;
+    localStorage.removeItem('role');
+  }
 }

@@ -7,17 +7,20 @@
   width: 100%;
   min-width: 300px;
 }
+
 mat-card-title,
 mat-card-content {
   display: flex;
   justify-content: center;
 }
+
 .loginError {
   padding: 16px;
   width: 300px;
   color: white;
   background-color: red;
 }
+
 .loginButtons {
   display: flex;
   flex-direction: row;

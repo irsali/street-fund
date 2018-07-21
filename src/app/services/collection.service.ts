@@ -9,12 +9,12 @@ export class CollectionService {
 
   put(form: any) {
     const response = this.http.put('collections', form);
-    this.notificationService.notifySuccess('Person is saved successfully');
+    this.notificationService.notifySuccess('Collection is saved successfully');
     return response;
   }
 
-  getPage(page: number = 1, pageSize: number = 10, sort?: string, search?: string) {
-    const response = this.http.getPage(`collections?_page=${page}&_limit=${pageSize}`);
+  getPage(page: number = 1, pageSize: number = 10, sortField?: string, sortOrder: string = 'asc', search?: string) {
+    const response = this.http.getPage(`collections?_page=${page}&_limit=${pageSize}&_sort=${sortField}&_order=${sortOrder}`);
     return response;
   }
 

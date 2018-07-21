@@ -15,7 +15,7 @@ export class EntityService {
     return response;
   }
 
-  getPage(page: number = 1, pageSize: number = 10, sortField?: string, sortOrder?: string, search?: string) {
+  getPage(page: number = 1, pageSize: number = 10, sortField?: string, sortOrder: string = 'asc', search?: string) {
     const response = this.http.getPage(`entities?_page=${page}&_limit=${pageSize}&_sort=${sortField}&_order=${sortOrder}`);
     return response;
   }

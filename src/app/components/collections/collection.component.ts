@@ -12,6 +12,7 @@ import { IEntityModel, ICollectionModel } from '@app/models';
 })
 export class CollectionComponent implements OnInit {
 
+  id: any;
   entityName: string;
   entityOptions: any;
   form: FormGroup;
@@ -24,6 +25,7 @@ export class CollectionComponent implements OnInit {
     this.route.params.subscribe(x => {
       const id = x.id;
       if (Number(id)) {
+        this.id = id;
         this.service.get(id).subscribe((response: ICollectionModel) => {
           this.form = FormHelper.toFormGroup(this.metaService.getCollectionMeta(), response);
           this.entityService.get(response.entityId).subscribe((res: IEntityModel) => {

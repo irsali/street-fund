@@ -1,5 +1,5 @@
 <mat-sidenav-container class="height100Per">
-  <app-nav-menu></app-nav-menu>
+  <app-nav-menu *ngIf="showNavMenu"></app-nav-menu>
   <div class="app-content mat-typography">
     <router-outlet></router-outlet>
   </div>

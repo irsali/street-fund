@@ -1,3 +1,13 @@
-<p>
-  expense works!
-</p>
+<mat-card>
+    <mat-card-title>{{id ? 'Add' : 'Edit'}} Expense</mat-card-title>
+    <mat-card-content>
+      <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <app-typeahead [form]="form" name="entityId" label="Person" [options]="entityOptions" [viewValue]="entityName" (debounceKeyup)="populateEntityAutoComplete($event)"></app-typeahead>
+        <app-input [form]="form" name="amount" icon="amount" label="Amount" type="number"></app-input>
+        <app-date [form]="form" name="date" icon="date" label="Date"></app-date>
+
+        <button type="submit" mat-button mat-raised-button color="primary">Submit</button>
+        <button type="button" mat-button mat-raised-button [routerLink]="['/expenses']" class="floatRt">Back to List</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

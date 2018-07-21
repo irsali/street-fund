@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, NavigationStart } from '@angular/router';
+import { Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe((event: RouterEvent) => {
-      if (event instanceof NavigationStart) {
+      console.log(event);
+      if (event instanceof NavigationEnd) {
         console.log(event.url);
         if (event.url === '/login') {
           this.showNavMenu = false;

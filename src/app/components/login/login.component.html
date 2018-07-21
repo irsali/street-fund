@@ -6,7 +6,7 @@
       <app-input [form]="form" name="password" icon="lock" label="Password" type="password"></app-input>
 
       <p class="loginButtons">
-        <button type="submit" mat-button mat-raised-button color="primary">Login</button>
+        <button type="submit" [disabled]="submitProcessing || form.invalid" mat-button mat-raised-button color="primary">Login</button>
       </p>
     </form>
   </mat-card-content>
