@@ -12,6 +12,7 @@ import { isNumber } from 'util';
 })
 export class EntityComponent implements OnInit {
 
+  id: any;
   form: FormGroup;
 
   constructor(private route: ActivatedRoute, private router: Router, private metaService: ModelMetadataService,
@@ -21,6 +22,7 @@ export class EntityComponent implements OnInit {
     this.route.params.subscribe(x => {
       const id = x.id;
       if (Number(id)) {
+        this.id = id;
         this.service.get(Number(id)).subscribe(response => {
           const model = response;
           this.form = FormHelper.toFormGroup(this.metaService.getEntityMeta(), model);
@@ -34,7 +36,10 @@ export class EntityComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.service.put(this.form.value).subscribe((response) => {
-        this.ngOnInit();
+        if (response) {
+          this.notificationService.notifySuccess('Person is saved successfully');
+          this.ngOnInit();
+        }
       });
     }
   }

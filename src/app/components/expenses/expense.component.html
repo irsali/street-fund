@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-title>{{id ? 'Add' : 'Edit'}} Expense</mat-card-title>
+    <mat-card-title>{{id ? 'Edit' : 'Add'}} Expense</mat-card-title>
     <mat-card-content>
       <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <app-typeahead [form]="form" name="entityId" label="Person" [options]="entityOptions" [viewValue]="entityName" (debounceKeyup)="populateEntityAutoComplete($event)"></app-typeahead>

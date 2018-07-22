@@ -11,7 +11,7 @@ export class EntityService {
 
   put(form: any) {
     const response = this.http.put('entities', form);
-    this.notificationService.notifySuccess('Person is saved successfully');
+
     return response;
   }
 

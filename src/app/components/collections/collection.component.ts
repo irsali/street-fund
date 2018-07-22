@@ -55,7 +55,10 @@ export class CollectionComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.service.put(this.form.value).subscribe((response) => {
-        this.ngOnInit();
+        if (response) {
+          this.notificationService.notifySuccess('Collection is saved successfully');
+          this.ngOnInit();
+        }
       });
     }
   }

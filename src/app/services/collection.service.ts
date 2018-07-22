@@ -9,7 +9,7 @@ export class CollectionService {
 
   put(form: any) {
     const response = this.http.put('collections', form);
-    this.notificationService.notifySuccess('Collection is saved successfully');
+
     return response;
   }
 

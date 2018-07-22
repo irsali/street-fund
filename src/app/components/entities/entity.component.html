@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title>Person</mat-card-title>
+  <mat-card-title>{{id ? 'Edit' : 'Add'}} Person</mat-card-title>
   <mat-card-content>
     <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <app-input [form]="form" name="firstName" icon="name" label="First Name"></app-input>

@@ -56,7 +56,10 @@ export class ExpenseComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.service.put(this.form.value).subscribe((response) => {
-        this.ngOnInit();
+        if (response) {
+          this.notificationService.notifySuccess('Expense is saved successfully');
+          this.ngOnInit();
+        }
       });
     }
   }

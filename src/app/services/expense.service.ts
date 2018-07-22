@@ -9,7 +9,7 @@ export class ExpenseService {
 
   put(form: any) {
     const response = this.http.put('expenses', form);
-    this.notificationService.notifySuccess('Expense is saved successfully');
+
     return response;
   }
 
