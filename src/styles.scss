@@ -12,6 +12,10 @@ html, body {
   height: 100%;
 }
 
+.width100per {
+  width: 100%;
+}
+
 .floatRt {
   float: right;
 }
@@ -42,7 +46,6 @@ mat-sidenav-container.m2app-dark {
   flex: 1 1 auto;
 }
 
-
 .app-fab {
   position: fixed !important;
   bottom: 20px;
@@ -64,16 +67,13 @@ mat-sidenav-container.m2app-dark {
   padding: 0;
   min-width: 50px;
 }
+
 .app-button {
   margin: 5px;
 }
 
 .app-list {
   border: 1px solid rgba(0,0,0,0.12);
-}
-
-.width100per {
-  width: 100%;
 }
 
 .app-progress {
@@ -83,17 +83,6 @@ mat-sidenav-container.m2app-dark {
 .example-h2 {
   margin: 10px 0;
   color: rgba(0,0,0,.54);
-}
-
-.example-section {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 60px;
-}
-
-.example-margin {
-  margin: 10px;
 }
 
 .mat-slider-horizontal {
@@ -112,10 +101,21 @@ mat-chip {
   width: inherit;
 }
 
+.link {
+  color: #3f51b5;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
-.link {
-  color: #3f51b5;
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
 }
